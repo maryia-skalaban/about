@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <header class="header">
+    <div class="logo"><h1><a href="#">Maryia Skalaban</a></h1></div>
+        <button class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="nav-links">
+            <a href="#about" data-pl="O mnie" data-en="About me"></a>
+            <a href="#projects" data-pl="Projekty" data-en="Projects"></a>
+            <a href="#contact" data-pl="Kontakt" data-en="Contact"></a>
+            <button id="lang-toggle"></button>
+        </nav>
+    </header>
+   <script>
+    let lastScroll = 0;
+    
+    window.addEventListener("scroll", function() {
+        const currentScroll = window.pageYOffset;
+        const header = document.querySelector(".header");
+        
+        if (currentScroll <= 0) {
+            // В самом верху страницы - показываем шапку
+            header.classList.remove("hidden");
+            return;
+        }
+        
+        if (currentScroll > lastScroll && !header.classList.contains("hidden")) {
+            // Скроллим вниз - прячем шапку
+            header.classList.add("hidden");
+        } else if (currentScroll < lastScroll && header.classList.contains("hidden")) {
+            // Скроллим вверх - показываем шапку
+            header.classList.remove("hidden");
+        }
+        
+        lastScroll = currentScroll;
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".nav-links");
+        const header = document.querySelector(".header");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        burger.addEventListener("click", () => {
+            burger.classList.toggle("open");
+            nav.classList.toggle("active");
+            header.classList.toggle("menu-open");
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                burger.classList.remove("open");
+                nav.classList.remove("active");
+                header.classList.remove("menu-open");
+            });
+        });
+    });
+    </script>
+        <main>
+            <section id="about">
+                <!-- <h2 data-pl="O mnie" data-en="About me"></h2>
+                <img src="" alt="Maryia Skalaban" class="profile-pic" /> -->
+                <h4 id="greeting" data-pl="Cześć! Jestem początkującą frontend-deweloperką." data-en="Hi! I'm a beginner frontend developer."></h4>
+                <h3 data-pl="Moja droga w IT" data-en="My Journey in IT"></h3>
+        
+                <p data-pl="Nazywam się Maryia Skalaban i pochodzę z Białorusi. Od kilku lat rozwijam się w kierunku tworzenia stron internetowych oraz programowania."
+                   data-en="My name is Maryia Skalaban, and I come from Belarus. For several years, I have been developing in web development and programming."></p>
+        
+                <p data-pl="Moja przygoda z IT rozpoczęła się w 2022 roku, gdy ukończyłam kursy programowania w Białoruskim Państwowym Uniwersytecie Informatyki i Radioelektroniki (BGUIR). Nauczyłam się tam podstaw HTML, CSS oraz Python, co dało mi solidne fundamenty do dalszej nauki."
+                   data-en="My IT journey began in 2022 when I completed programming courses at the Belarusian State University of Informatics and Radioelectronics (BGUIR). I learned the basics of HTML, CSS, and Python there, which gave me a solid foundation for further learning."></p>
+        
+                <p data-pl="W 2023 roku rozpoczęłam naukę w technikum informatycznym w szkole AWANS w Jędrzejowie (Polska), gdzie zdobywam praktyczne umiejętności potrzebne w pracy programistki."
+                   data-en="In 2023, I started studying at the AWANS technical school in Jędrzejów (Poland), where I gain practical skills needed for work as a programmer."></p>
+        
+                <p data-pl="W marcu 2025 roku odbyłam praktyki zawodowe w firmie EXEO w Grecji, gdzie pracowałam w międzynarodowym środowisku i uczestniczyłam w projektach IT."
+                   data-en="In March 2025, I completed an internship at EXEO in Greece, where I worked in an international environment and participated in IT projects."></p>
+        
+                <p data-pl="Moim celem jest dalszy rozwój jako front-end developer, tworzenie estetycznych i funkcjonalnych stron oraz ciągła nauka nowych technologii."
+                   data-en="My goal is to continue developing as a front-end developer, creating aesthetic and functional websites, and constantly learning new technologies."></p>
+
+
+                <h3 data-pl="Umiejętności" data-en="Skills"></h3>
+                <p data-pl="Aktualnie posiadam:" data-en="Currently, I have:"></p>
+                <!-- HTML -->
+                <div class="skill" data-level="5">
+                    <div class="skill-title">HTML</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+
+                <!-- CSS -->
+                <div class="skill" data-level="5">
+                    <div class="skill-title">CSS</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+
+                <!-- SQL -->
+                <div class="skill" data-level="3">
+                    <div class="skill-title">SQL</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill" data-level="4">
+                    <div class="skill-title">JavaScript</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+
+                <!-- PHP -->
+                <div class="skill" data-level="3">
+                    <div class="skill-title">PHP</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+
+                <!-- Python -->
+                <div class="skill" data-level="2">
+                    <div class="skill-title">Python</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+                <!-- Script stars animation -->
+                <script>
+                const starSVG = `
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L14.9 8.6L22 9.3L17 14.1L18.3 21.2L12 17.8L5.7 21.2L7 14.1L2 9.3L9.1 8.6L12 2Z" 
+                        fill="none" stroke="gold" stroke-width="1.5" />
+                    </svg>
+                `;
+
+                function createStars() {
+                    document.querySelectorAll('.stars-container').forEach(container => {
+                    });
+                }
+
+                function createSparks(star) {
+                    for (let i = 0; i < 6; i++) {
+                    const spark = document.createElement('div');
+                    spark.classList.add('spark');
+                    const angle = Math.random() * 2 * Math.PI;
+                    const distance = 30 + Math.random() * 30;
+                    const x = Math.cos(angle) * distance + 'px';
+                    const y = Math.sin(angle) * distance + 'px';
+                    spark.style.setProperty('--x', x);
+                    spark.style.setProperty('--y', y);
+                    star.appendChild(spark);
+                    setTimeout(() => spark.remove(), 1000);
+                    }
+                }
+
+                function animateSkills() {
+                    const skills = document.querySelectorAll('.skill');
+                    skills.forEach((skill, skillIndex) => {
+                    const stars = skill.querySelectorAll('.star');
+                    const level = parseInt(skill.dataset.level);
+                    stars.forEach((star, starIndex) => {
+                        setTimeout(() => {
+                        if (starIndex < level) {
+                            star.classList.add('filled');
+                            createSparks(star);
+                        }
+                        }, skillIndex * 1000 + starIndex * 200);
+                    });
+                    });
+                }
+
+                let animated = false;
+                window.addEventListener('scroll', () => {
+                    const trigger = document.querySelector('.skill');
+                    if (!animated && trigger && trigger.getBoundingClientRect().top < window.innerHeight) {
+                    animated = true;
+                    createStars();
+                    animateSkills();
+                    }
+                }); 
+                </script>
+            <section id="projects">
+                <h2>My Projects</h2>
+                <div class="projects-grid">
+                    <div class="project" data-url="https://maryia-skalaban.github.io/kino/">
+                    <h3>Project 1</h3>
+                    <img src="img/image.png" alt="Project 1 Screenshot" />
+                    <p>HTML, CSS, JavaScript</p>
+                    </div>
+                    <div class="project" data-url="https://yourproject.github.io/project2">
+                    <h3>Project 2</h3>
+                    <img src="images/project2.png" alt="Project 2 Screenshot" />
+                    <p>HTML, CSS</p>
+                    </div>
+                    <div class="project" data-url="https://yourproject.github.io/project3">
+                    <h3>Project 3</h3>
+                    <img src="images/project3.png" alt="Project 3 Screenshot" />
+                    <p>HTML, CSS, JS, API</p>
+                    </div>
+                </div>
+
+                <div id="overlay">
+                    <iframe src="" frameborder="0"></iframe>
+                    <div id="fullscreen-hint" data-pl="Wyjście klawiszem ESC" data-en="Press ESC to exit"></div>
+                    <button id="close-btn">⛶</button>
+                </div>
+            </section>
+            <!-- Script for projects section -->
+            <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            const projects = document.querySelectorAll(".project");
+            const overlay = document.getElementById("overlay");
+            const iframe = overlay.querySelector("iframe");
+            const hint = document.getElementById("fullscreen-hint");
+            const closeBtn = document.getElementById("close-btn");
+
+            const lang = document.documentElement.lang || "pl"; // automatyczny język
+
+            projects.forEach(project => {
+                project.addEventListener("click", () => {
+                const url = project.dataset.url;
+                iframe.src = url;
+                overlay.style.display = "flex";
+                showHint(lang);
+                });
+            });
+
+            function showHint(lang) {
+                const text = hint.dataset[lang] || hint.dataset["en"];
+                hint.textContent = text;
+                hint.style.opacity = 1;
+                hint.style.animation = "fadeInOut 4s forwards";
+            }
+
+            function closeOverlay() {
+                overlay.style.display = "none";
+                iframe.src = "";
+                hint.textContent = "";
+                hint.style.opacity = 0;
+            }
+
+            closeBtn.addEventListener("click", closeOverlay);
+
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape" && overlay.style.display === "flex") {
+                closeOverlay();
+                }
+            });
+            });
+            </script>
+            </section>            
+            <section class="contact">
+                <h2 data-pl="Kontakt" data-en="Contact"></h2>
+            </section>
+        </main>        
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const langToggleBtn = document.getElementById('lang-toggle');
+  const greetingEl = document.getElementById('greeting');
+  let currentLang = 'pl';
+
+  // --- JĘZYK ---
+  function switchLanguage(lang) {
+    document.querySelectorAll('[data-pl][data-en]').forEach(el => {
+      if (el.id === 'greeting') return;
+      el.textContent = lang === 'pl' ? el.getAttribute('data-pl') : el.getAttribute('data-en');
+    });
+    updateGreeting();
+  }
+
+  function updateButtonText() {
+    langToggleBtn.textContent = currentLang === 'pl' ? 'EN' : 'PL';
+  }
+
+  function getGreeting(lang) {
+    const hour = new Date().getHours();
+    if (lang === 'pl') {
+      if (hour >= 5 && hour < 18) return 'Dzień dobry! Jestem początkującą frontend-deweloperką.';
+      return 'Dobry wieczór! Jestem początkującą frontend-deweloperką.';
+    } else {
+      if (hour >= 5 && hour < 18) return 'Good day! I\'m a beginner frontend developer.';
+      return 'Good evening! I\'m a beginner frontend developer.';
+    }
+  }
+
+  function updateGreeting() {
+    if (greetingEl) greetingEl.textContent = getGreeting(currentLang);
+  }
+
+  switchLanguage(currentLang);
+  updateButtonText();
+
+  langToggleBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'pl' ? 'en' : 'pl';
+    switchLanguage(currentLang);
+    updateButtonText();
+  });
+
+  // --- FULLSCREEN SYSTEM ---
+//   const fullscreen = document.querySelector('.fullscreen');
+//   const exitButton = fullscreen.querySelector('.exit-button');
+//   const fullscreenTitle = fullscreen.querySelector('.fullscreen-title');
+//   const fullscreenIframe = fullscreen.querySelector('iframe');
+//   const escHint = fullscreen.querySelector('.esc-hint');
+
+//   // Pojawienie ESC hintu na środku
+//   function showEscHint() {
+//     escHint.classList.add('show');
+//     setTimeout(() => {
+//       escHint.classList.remove('show');
+//     }, 3000);
+//   }
+
+//   // Otwórz projekt w fullscreen
+//   function openFullscreen(title, url) {
+//     fullscreenTitle.textContent = title;
+//     fullscreenIframe.src = url;
+
+//     fullscreen.classList.remove('hidden');
+//     requestAnimationFrame(() => {
+//       fullscreen.classList.add('visible');
+//     });
+
+//     showEscHint();
+//   }
+
+  // Zamknij projekt
+//   function closeFullscreen() {
+//     fullscreen.classList.remove('visible');
+//     setTimeout(() => {
+//       fullscreen.classList.add('hidden');
+//       fullscreenIframe.src = ''; // Czyści iframe
+//     }, 300);
+//   }
+
+//   exitButton.addEventListener('click', closeFullscreen);
+//   document.addEventListener('keydown', (e) => {
+//     if (e.key === 'Escape') {
+//       closeFullscreen();
+//     }
+//   });
+
+  // Obsługa wielu projektów
+  document.querySelectorAll('.project-preview').forEach(preview => {
+    const image = preview.querySelector('.project-image');
+    image.addEventListener('click', () => {
+      const title = preview.getAttribute('data-title') || '';
+      const url = preview.getAttribute('data-url') || '';
+      openFullscreen(title, url);
+    });
+  });
+});
+
+
+    </script>
+</body>
+</html>
