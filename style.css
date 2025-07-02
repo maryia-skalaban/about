@@ -67,7 +67,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: #5e45f1;
+  color: #327df4;
   padding-right: 10px;
 }
 
@@ -76,11 +76,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
-  height: 20px;
+  height: 24px;
   background: none;
   border: none;
   cursor: pointer;
   z-index: 20;
+  position: relative;
 }
 
 .burger span {
@@ -93,9 +94,9 @@ body {
   transform-origin: center;
 }
 
-/* BURGER ACTIVE — крестик */
+/* BURGER ACTIVE */
 .burger.open span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(7px, 7px);
 }
 
 .burger.open span:nth-child(2) {
@@ -103,22 +104,23 @@ body {
 }
 
 .burger.open span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 #lang-toggle {
   background-color: transparent;
   border: none;
-  color: rgb(27, 0, 201);
+  color: #327df4;
   cursor: pointer;
   font-size: 1.15rem;
   margin-left: 60px;
   /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
-/* Адаптивные стили для мобильных устройств */
+
 
 
 @media (max-width: 768px) {
+
   .header{
       padding: 20px 30px 20px 20px;
   }
@@ -133,12 +135,12 @@ body {
     background: white;
     color: black;
     position: absolute;
-    top: 50px; /* Меняем с 80px на 60px (высота шапки) */
+    top: 50px; 
     left: 0;
-    right: 0; /* Меняем с 20px на 0 для полного выравнивания */
+    right: 0; 
     width: 100%;
-    height: calc(100vh - 60px); /* Учитываем высоту шапки */
-    padding: 20px; /* Уменьшаем отступы внутри меню */
+    height: calc(100vh - 60px); 
+    padding: 20px; 
     margin: 0;
     box-sizing: border-box;
   }
@@ -166,7 +168,7 @@ body {
   
 }
 
-/* Оформление секции "About me" */
+
 #about {
   max-width: 800px;
   margin: 0 auto;
@@ -187,7 +189,7 @@ body {
   display: block;
   width: 80px;
   height: 3px;
-  background: #5e45f1;
+  background: #327df4;
   margin: 15px auto;
 }
 
@@ -203,6 +205,7 @@ body {
   color: #333;
   font-weight: normal;
   font-style: italic;
+  text-align: center;
 }
 
 #about p {
@@ -214,6 +217,7 @@ body {
   margin-bottom: 15px;
   display: flex;
   gap: 15px;
+  justify-content: space-around;
 }
 
 .skill-title {
@@ -230,11 +234,11 @@ body {
   border-radius: 50%;
   object-fit: cover;
   margin: 0 auto 30px;
-  border: 3px solid #5e45f1;
+  border: 3px solid #327df4;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* Адаптивность для мобильных */
+
 @media (max-width: 768px) {
   #about {
     padding: 30px 15px;
@@ -254,6 +258,7 @@ body {
   }
     .skill {
     gap: 10px;
+    justify-content: space-around;
   }
   
 }
@@ -261,7 +266,7 @@ body {
 .skills-list li {
     position: relative;
     transition: border-color 0.3s ease;
-    gap: 10px;        
+    gap: 10px;   
   }
 
 /* Style stars */
@@ -272,8 +277,8 @@ body {
 }
 
 .star {
-  width: 15px;
-  height: 15px;
+  width: 20px;
+  height: 20px;
   position: relative;
 }
 
@@ -400,10 +405,423 @@ body {
   100% { opacity: 0; }
 }
 
-/* Адаптивность для мобильных */
+/* Мобильная версия для секции Projects */
 @media (max-width: 768px) {
-  #fullscreen-hint {
-    display: none;
+  #projects {
+    padding: 1.5rem 1rem;
+  }
+
+  #projects h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .project {
+    padding: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .project h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project img {
+    width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 0.5rem 0;
+  }
+
+  .project p {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Оверлей для полноэкранного просмотра */
+  #overlay {
+    padding-top: 50px; /* Учитываем высоту шапки */
+  }
+
+  #close-btn {
+    top: 70px; /* Ниже шапки */
+    right: 15px;
+    font-size: 1.2rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Дополнительные правки для маленьких экранов */
+@media (max-width: 480px) {
+  #projects {
+    padding: 1rem 0.8rem;
+  }
+
+  #projects h2 {
+    font-size: 1.6rem;
+  }
+
+  .project {
+    padding: 0.8rem;
+  }
+
+  .project h3 {
+    font-size: 1.2rem;
+  }
+
+  .project img {
+    max-height: 180px;
+  }
+
+  .project p {
+    font-size: 0.85rem;
+  }
+}
+
+/* Style for contact section */
+#contact {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+#contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: black;
+  position: relative;
+}
+
+#contact h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #327df4;
+  margin: 15px auto;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  text-align: left;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #444;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  fill: #327df4;
+}
+
+.contact-item a {
+  color: #327df4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #327df4;
+}
+
+.form-group label {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+  color: #777;
+  background: white;
+  padding: 0 5px;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 0.8rem;
+  color: #327df4;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #327df4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.btn:hover {
+  background: #2a6bd8;
+}
+
+/* Мобильная версия для секции Contact */
+@media (max-width: 768px) {
+  .contact {
+    padding: 30px 15px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .contact-info {
+    gap: 20px;
+  }
+
+  .contact-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .contact-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .contact-form {
+    gap: 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 12px;
+    font-size: 0.95rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+    left: 12px;
+    top: 10px;
+  }
+
+  .form-group input:focus + label,
+  .form-group input:not(:placeholder-shown) + label,
+  .form-group textarea:focus + label,
+  .form-group textarea:not(:placeholder-shown) + label {
+    top: -8px;
+    font-size: 0.75rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    width: 100%;
+  }
+}
+
+/* Дополнительные правки для очень маленьких экранов */
+@media (max-width: 480px) {
+  .contact {
+    padding: 25px 10px;
+  }
+
+  .contact h2 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+  }
+
+  .contact-item {
+    font-size: 0.95rem;
+  }
+
+  .contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Footer styles */
+.footer {
+  width: 100%;
+  background: #f8f8f8;
+  padding: 60px 0 30px;
+  border-top: 1px solid #e7e7e7;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* Левый столбец - Основные ссылки */
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.footer-links a {
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+  padding: 3px 0;
+}
+
+.footer-links a:hover {
+  color: #327df4;
+}
+
+/* Центральный столбец - PDF документы */
+.footer-documents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.document-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.document-link:hover {
+  color: #327df4;
+}
+
+.document-icon {
+  width: 20px;
+  height: 20px;
+  fill: #555;
+}
+
+.document-text {
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Правый столбец - Социальные иконки */
+.social-links {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 28px;
+  height: 28px;
+  transition: all 0.3s ease;
+}
+
+.github-icon { fill: #333; }
+.linkedin-icon { fill: #0077b5; }
+.whatsapp-icon { fill: #25D366; }
+
+.social-icon:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #e7e7e7;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 20px;
   }
   
+  .footer-content {
+    flex-direction: column;
+    gap: 25px;
+  }
+  
+  .footer-links,
+  .footer-documents {
+    align-items: flex-start;
+  }
+  
+  .social-links {
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
 }
