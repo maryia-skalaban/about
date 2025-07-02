@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Maryia Skalaban</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,16 +30,13 @@
         const header = document.querySelector(".header");
         
         if (currentScroll <= 0) {
-            // В самом верху страницы - показываем шапку
             header.classList.remove("hidden");
             return;
         }
         
         if (currentScroll > lastScroll && !header.classList.contains("hidden")) {
-            // Скроллим вниз - прячем шапку
             header.classList.add("hidden");
         } else if (currentScroll < lastScroll && header.classList.contains("hidden")) {
-            // Скроллим вверх - показываем шапку
             header.classList.remove("hidden");
         }
         
@@ -69,9 +66,9 @@
     </script>
         <main>
             <section id="about">
-                <!-- <h2 data-pl="O mnie" data-en="About me"></h2>
-                <img src="" alt="Maryia Skalaban" class="profile-pic" /> -->
                 <h4 id="greeting" data-pl="Cześć! Jestem początkującą frontend-deweloperką." data-en="Hi! I'm a beginner frontend developer."></h4>
+                <h2 data-pl="O mnie" data-en="About me"></h2>
+                <img src="img/profil.jpg" alt="Maryia Skalaban" class="profile-pic" />
                 <h3 data-pl="Moja droga w IT" data-en="My Journey in IT"></h3>
         
                 <p data-pl="Nazywam się Maryia Skalaban i pochodzę z Białorusi. Od kilku lat rozwijam się w kierunku tworzenia stron internetowych oraz programowania."
@@ -105,8 +102,20 @@
                 </div>
 
                 <!-- CSS -->
-                <div class="skill" data-level="5">
+                <div class="skill" data-level="4">
                     <div class="skill-title">CSS</div>
+                    <div class="stars-container">
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
+                    </div>
+                </div>
+
+                <!-- JavaScript -->
+                <div class="skill" data-level="3">
+                    <div class="skill-title">JavaScript</div>
                     <div class="stars-container">
                     <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
                     <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
@@ -119,18 +128,6 @@
                 <!-- SQL -->
                 <div class="skill" data-level="3">
                     <div class="skill-title">SQL</div>
-                    <div class="stars-container">
-                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
-                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
-                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
-                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
-                    <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
-                    </div>
-                </div>
-
-                <!-- JavaScript -->
-                <div class="skill" data-level="4">
-                    <div class="skill-title">JavaScript</div>
                     <div class="stars-container">
                     <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
                     <div class="star"><svg viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.753l-6 5.847L19.416 24 12 19.771 4.584 24 6 15.6 0 9.753 8.332 8.018z"/></svg></div>
@@ -219,22 +216,17 @@
                 }); 
                 </script>
             <section id="projects">
-                <h2>My Projects</h2>
+                <h2 data-pl="Moje projekty" data-en="My projects"></h2>
                 <div class="projects-grid">
-                    <div class="project" data-url="https://maryia-skalaban.github.io/kino/">
-                    <h3>Project 1</h3>
-                    <img src="img/image.png" alt="Project 1 Screenshot" />
-                    <p>HTML, CSS, JavaScript</p>
+                    <div class="project" data-url="https://maryia-skalaban.github.io/hotel">
+                        <h3 data-pl="HOTEL" data-en="HOTEL"></h3>
+                        <img src="img/hotel-screenshot.png" alt="HOTEL Screenshot">
+                        <p>HTML, CSS, JavaScript</p>
                     </div>
-                    <div class="project" data-url="https://yourproject.github.io/project2">
-                    <h3>Project 2</h3>
-                    <img src="images/project2.png" alt="Project 2 Screenshot" />
-                    <p>HTML, CSS</p>
-                    </div>
-                    <div class="project" data-url="https://yourproject.github.io/project3">
-                    <h3>Project 3</h3>
-                    <img src="images/project3.png" alt="Project 3 Screenshot" />
-                    <p>HTML, CSS, JS, API</p>
+                    <div class="project" data-url="https://maryia-skalaban.github.io/movie">
+                        <h3 data-pl="KINO" data-en="MOVIE"></h3>
+                        <img src="img/movie-screenshot.png" alt="Movie Screenshot">
+                        <p>HTML, CSS, JavaScript</p>
                     </div>
                 </div>
 
@@ -287,12 +279,87 @@
             });
             });
             </script>
-            </section>            
-            <section class="contact">
+            <section id="contact">
                 <h2 data-pl="Kontakt" data-en="Contact"></h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span data-pl="Email" data-en="Email"></span>
+                            <a href="mailto:maryiaskalaban@gmail.com">maryiaskalaban@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg class="contact-icon" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span data-pl="Lokalizacja" data-en="Location"></span>
+                            <span data-pl="Kielce, Polska" data-en="Kiece, Poland"></span>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder=" " required>
+                            <label data-pl="Imię" data-en="Name"></label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder=" " required>
+                            <label data-pl="Email" data-en="Email"></label>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder=" " required></textarea>
+                            <label data-pl="Wiadomość" data-en="Message"></label>
+                        </div>
+                        <button type="submit" class="btn" data-pl="Wyślij" data-en="Send"></button>
+                    </form>
+                </div>
             </section>
-        </main>        
+        </main>   
     </div>
+        <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" data-pl="Strona główna" data-en="Home"></a>
+                <a href="#about" data-pl="O mnie" data-en="About"></a>
+                <a href="#projects" data-pl="Projekty" data-en="Projects"></a>
+                <a href="#contact" data-pl="Kontakt" data-en="Contact"></a>
+            </div>
+
+            <div class="footer-documents">
+                <a href="cv.pdf" download class="document-link">
+                <span data-pl="Moje CV" data-en="My CV"></span>
+                </a>
+                <a href="portfolio.pdf" download class="document-link">
+                <span data-pl="Portfolio" data-en="Portfolio"></span>
+                </a>
+            </div>
+
+            <div class="social-links">
+                <a href="#" aria-label="GitHub">
+                    <svg class="social-icon github-icon" viewBox="0 0 24 24">
+                        <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg class="social-icon linkedin-icon" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+                <a href="#" aria-label="WhatsApp">
+                    <svg class="social-icon whatsapp-icon" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                </a>
+            </div>
+            </div>
+
+            <div class="footer-bottom">
+        <p data-pl="© 2025 Maryia Skalaban. Wszystkie prawa zastrzeżone." data-en="© 2025 Maryia Skalaban. All rights reserved."></p>
+            </div>
+        </div>
+        </footer>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   const langToggleBtn = document.getElementById('lang-toggle');
@@ -336,51 +403,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateButtonText();
   });
 
-  // --- FULLSCREEN SYSTEM ---
-//   const fullscreen = document.querySelector('.fullscreen');
-//   const exitButton = fullscreen.querySelector('.exit-button');
-//   const fullscreenTitle = fullscreen.querySelector('.fullscreen-title');
-//   const fullscreenIframe = fullscreen.querySelector('iframe');
-//   const escHint = fullscreen.querySelector('.esc-hint');
-
-//   // Pojawienie ESC hintu na środku
-//   function showEscHint() {
-//     escHint.classList.add('show');
-//     setTimeout(() => {
-//       escHint.classList.remove('show');
-//     }, 3000);
-//   }
-
-//   // Otwórz projekt w fullscreen
-//   function openFullscreen(title, url) {
-//     fullscreenTitle.textContent = title;
-//     fullscreenIframe.src = url;
-
-//     fullscreen.classList.remove('hidden');
-//     requestAnimationFrame(() => {
-//       fullscreen.classList.add('visible');
-//     });
-
-//     showEscHint();
-//   }
-
-  // Zamknij projekt
-//   function closeFullscreen() {
-//     fullscreen.classList.remove('visible');
-//     setTimeout(() => {
-//       fullscreen.classList.add('hidden');
-//       fullscreenIframe.src = ''; // Czyści iframe
-//     }, 300);
-//   }
-
-//   exitButton.addEventListener('click', closeFullscreen);
-//   document.addEventListener('keydown', (e) => {
-//     if (e.key === 'Escape') {
-//       closeFullscreen();
-//     }
-//   });
-
-  // Obsługa wielu projektów
   document.querySelectorAll('.project-preview').forEach(preview => {
     const image = preview.querySelector('.project-image');
     image.addEventListener('click', () => {
