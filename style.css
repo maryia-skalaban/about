@@ -19,6 +19,10 @@ body {
   padding: 0 20px;
 }
 
+section {
+  scroll-margin-top: 20px;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -114,10 +118,7 @@ body {
   cursor: pointer;
   font-size: 1.15rem;
   margin-left: 60px;
-  /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
-
-
 
 @media (max-width: 768px) {
 
@@ -405,7 +406,7 @@ body {
   100% { opacity: 0; }
 }
 
-/* Мобильная версия для секции Projects */
+
 @media (max-width: 768px) {
   #projects {
     padding: 1.5rem 1rem;
@@ -448,20 +449,19 @@ body {
     margin-top: 0.5rem;
   }
 
-  /* Оверлей для полноэкранного просмотра */
-  #overlay {
-    padding-top: 50px; /* Учитываем высоту шапки */
-  }
-
   #close-btn {
-    top: 70px; /* Ниже шапки */
-    right: 15px;
+    top: 100px; 
+    right: 30px;
     font-size: 1.2rem;
     padding: 0.3rem 0.6rem;
   }
+
+  #fullscreen-hint {
+    display: none; 
+  }
 }
 
-/* Дополнительные правки для маленьких экранов */
+
 @media (max-width: 480px) {
   #projects {
     padding: 1rem 0.8rem;
@@ -615,7 +615,6 @@ body {
   background: #2a6bd8;
 }
 
-/* Мобильная версия для секции Contact */
 @media (max-width: 768px) {
   .contact {
     padding: 30px 15px;
@@ -677,7 +676,6 @@ body {
   }
 }
 
-/* Дополнительные правки для очень маленьких экранов */
 @media (max-width: 480px) {
   .contact {
     padding: 25px 10px;
@@ -718,7 +716,6 @@ body {
   margin-bottom: 40px;
 }
 
-/* Левый столбец - Основные ссылки */
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -738,7 +735,6 @@ body {
   color: #327df4;
 }
 
-/* Центральный столбец - PDF документы */
 .footer-documents {
   flex: 1;
   display: flex;
@@ -773,7 +769,6 @@ body {
   margin-top: 5px;
 }
 
-/* Правый столбец - Социальные иконки */
 .social-links {
   flex: 1;
   display: flex;
@@ -804,7 +799,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* Адаптация для мобильных */
 @media (max-width: 768px) {
   .footer-container {
     padding: 0 20px;
