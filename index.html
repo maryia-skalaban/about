@@ -311,7 +311,10 @@
                         <textarea name="message" placeholder=" " required></textarea>
                         <label data-pl="Wiadomość" data-en="Message"></label>
                     </div>
-                    <button type="submit" class="btn" data-pl="Wyślij" data-en="Send">Wyślij</button>
+                    <div class="btn-group">
+                        <button type="submit" class="btn" data-pl="Wyślij" data-en="Send">Wyślij</button>
+                        <button type="reset" class="btn" data-pl="Resetuj" data-en="Reset">Resetuj</button>
+                    </div>
                     </form>
                 </div>
             </section>
@@ -348,56 +351,58 @@
         </div>
         </footer>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const langToggleBtn = document.getElementById('lang-toggle');
-      const greetingEl = document.getElementById('greeting');
-      let currentLang = 'pl';
-    
-      function switchLanguage(lang) {
-        document.querySelectorAll('[data-pl][data-en]').forEach(el => {
-          if (el.id === 'greeting') return;
-          el.textContent = lang === 'pl' ? el.getAttribute('data-pl') : el.getAttribute('data-en');
-        });
-        updateGreeting();
-      }
-    
-      function updateButtonText() {
-        langToggleBtn.textContent = currentLang === 'pl' ? 'EN' : 'PL';
-      }
-    
-      function getGreeting(lang) {
-        const hour = new Date().getHours();
-        if (lang === 'pl') {
-          if (hour >= 5 && hour < 18) return 'Dzień dobry! Jestem początkującą frontend-deweloperką.';
-          return 'Dobry wieczór! Jestem początkującą frontend-deweloperką.';
-        } else {
-          if (hour >= 5 && hour < 18) return 'Good day! I\'m a beginner frontend developer.';
-          return 'Good evening! I\'m a beginner frontend developer.';
-        }
-      }
-    
-      function updateGreeting() {
-        if (greetingEl) greetingEl.textContent = getGreeting(currentLang);
-      }
-    
-      switchLanguage(currentLang);
-      updateButtonText();
-    
-      langToggleBtn.addEventListener('click', () => {
-        currentLang = currentLang === 'pl' ? 'en' : 'pl';
-        switchLanguage(currentLang);
-        updateButtonText();
-      });
-    
-      document.querySelectorAll('.project-preview').forEach(preview => {
-        const image = preview.querySelector('.project-image');
-        image.addEventListener('click', () => {
-          const title = preview.getAttribute('data-title') || '';
-          const url = preview.getAttribute('data-url') || '';
-          openFullscreen(title, url);
-        });
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  const langToggleBtn = document.getElementById('lang-toggle');
+  const greetingEl = document.getElementById('greeting');
+  let currentLang = 'pl';
+
+  function switchLanguage(lang) {
+    document.querySelectorAll('[data-pl][data-en]').forEach(el => {
+      if (el.id === 'greeting') return;
+      el.textContent = lang === 'pl' ? el.getAttribute('data-pl') : el.getAttribute('data-en');
+    });
+    updateGreeting();
+  }
+
+  function updateButtonText() {
+    langToggleBtn.textContent = currentLang === 'pl' ? 'EN' : 'PL';
+  }
+
+  function getGreeting(lang) {
+    const hour = new Date().getHours();
+    if (lang === 'pl') {
+      if (hour >= 5 && hour < 18) return 'Dzień dobry! Jestem początkującą frontend-deweloperką.';
+      return 'Dobry wieczór! Jestem początkującą frontend-deweloperką.';
+    } else {
+      if (hour >= 5 && hour < 18) return 'Good day! I\'m a beginner frontend developer.';
+      return 'Good evening! I\'m a beginner frontend developer.';
+    }
+  }
+
+  function updateGreeting() {
+    if (greetingEl) greetingEl.textContent = getGreeting(currentLang);
+  }
+
+  switchLanguage(currentLang);
+  updateButtonText();
+
+  langToggleBtn.addEventListener('click', () => {
+    currentLang = currentLang === 'pl' ? 'en' : 'pl';
+    switchLanguage(currentLang);
+    updateButtonText();
+  });
+
+  document.querySelectorAll('.project-preview').forEach(preview => {
+    const image = preview.querySelector('.project-image');
+    image.addEventListener('click', () => {
+      const title = preview.getAttribute('data-title') || '';
+      const url = preview.getAttribute('data-url') || '';
+      openFullscreen(title, url);
+    });
+  });
 });
+
+
     </script>
 </body>
 </html>
