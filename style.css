@@ -118,7 +118,10 @@ section {
   cursor: pointer;
   font-size: 1.15rem;
   margin-left: 60px;
+  /* transition: background-color 0.3s ease, color 0.3s ease; */
 }
+
+
 
 @media (max-width: 768px) {
 
@@ -381,6 +384,12 @@ section {
   animation: fadeInOut 4s forwards;
 }
 
+.btn-group {
+  display: flex;
+  gap: 10px; 
+  justify-content: flex-start;  
+}
+
 #close-btn {
   position: absolute;
   top: 20px;
@@ -615,6 +624,7 @@ section {
   background: #2a6bd8;
 }
 
+/* Мобильная версия для секции Contact */
 @media (max-width: 768px) {
   .contact {
     padding: 30px 15px;
@@ -676,6 +686,7 @@ section {
   }
 }
 
+
 @media (max-width: 480px) {
   .contact {
     padding: 25px 10px;
@@ -735,6 +746,7 @@ section {
   color: #327df4;
 }
 
+/* Центральный столбец - PDF документы */
 .footer-documents {
   flex: 1;
   display: flex;
