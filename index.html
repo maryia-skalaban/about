@@ -298,20 +298,20 @@
                             <span data-pl="Kielce, Polska" data-en="Kiece, Poland"></span>
                         </div>
                     </div>
-                    <form class="contact-form" action="https://formspree.io/f/mblybvrp" method="POST">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder=" ">
-                            <label data-pl="Imię" data-en="Name"></label>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder=" ">
-                            <label data-pl="Email" data-en="Email"></label>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder=" " name="message"></textarea>
-                            <label data-pl="Wiadomość" data-en="Message"></label>
-                        </div>
-                        <button type="submit" class="btn" data-pl="Wyślij" data-en="Send"></button>
+                    <form action="https://formspree.io/f/mblybvrp" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder=" " required>
+                        <label data-pl="Imię" data-en="Name"></label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder=" " required>
+                        <label data-pl="Email" data-en="Email"></label>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder=" " required></textarea>
+                        <label data-pl="Wiadomość" data-en="Message"></label>
+                    </div>
+                    <button type="submit" class="btn" data-pl="Wyślij" data-en="Send">Wyślij</button>
                     </form>
                 </div>
             </section>
